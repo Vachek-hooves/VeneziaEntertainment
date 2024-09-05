@@ -1,7 +1,13 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {MainScreen, MapScreen, UserScreen, WelcomeScreen} from './screen';
+import {
+  EventScreen,
+  MainScreen,
+  MapScreen,
+  UserScreen,
+  WelcomeScreen,
+} from './screen';
 import {StyleSheet} from 'react-native';
 import {COLOR} from './contstants/colors';
 import IconMap from './components/Icon/IconMap';
@@ -51,6 +57,7 @@ function App() {
         }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
         <Stack.Screen name="TabNavigationMenu" component={TabNavigationMenu} />
+        <Stack.Screen name="EventScreen" component={EventScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
