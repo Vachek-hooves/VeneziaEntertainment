@@ -1,6 +1,40 @@
 export const VENICE_GOUP = [
-  {keyName: 'Gondola', gridId: 'go1', image: ''},
-  {keyName: 'Theatre', gridId: 'th1', image: ''},
+  {
+    keyName: 'Gondola',
+    gridId: 'go1',
+    image:
+      'https://cdn-imgix.headout.com/media/images/6e5fd345bb53c69fc841b8fac7a0c306-Layer1.jpg',
+  },
+  {
+    keyName: 'Theatre',
+    gridId: 'th1',
+    image:
+      'https://fascination-venice.com/wp-content/uploads/2019/12/La_Fenice_Opening_Times_04.jpg',
+  },
+  {
+    keyName: 'Carnival',
+    gridId: 'ca1',
+    image:
+      'https://i0.wp.com/www.touristitaly.com/wp-content/uploads/2024/01/shutterstock_1008425929-scaled.jpg?fit=2560%2C1707&ssl=1',
+  },
+  {
+    keyName: 'Island',
+    gridId: 'is1',
+    image:
+      'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/06/6e/ec/6c.jpg',
+  },
+  {
+    keyName: 'Square',
+    gridId: 'sq1',
+    image:
+      'https://www.ourescapeclause.com/wp-content/uploads/2021/08/shutterstock_1372373447-scaled.jpg',
+  },
+  {
+    keyName: 'Museum',
+    gridId: 'mu1',
+    image:
+      'https://images.marketing-italia.eu/uploads/visitvenezia/uploads_articoli/paragrafo/20210801112447Fondaco-dei-Turchi-Museo-di-storia-naturale-Venezia-07-2014.jpgs',
+  },
 ];
 
 export const GONDOLA = [
@@ -202,4 +236,277 @@ export const THEATRE = [
     ],
   },
 ];
-// export const THEATRE = [];
+
+export const CARNIVAL = [
+  {
+    id: 'ca1',
+    type: 'Carnival',
+    schedule: [
+      {
+        name: 'Flight of the Angel',
+        description:
+          "A symbolic event where an 'Angel' descends from the bell tower of St. Mark's Basilica on a rope, symbolizing a heavenly blessing for the carnival.",
+        schedule: 'February 6, 11:00',
+        location: "St. Mark's Square",
+        photo: 'flight_of_the_angel.jpg',
+      },
+      {
+        name: 'Costume Balls',
+        description:
+          "Luxurious costume balls take place during the carnival, including a special 'Mary of the Year' Ball and the famous Venetian Masquerade Ball.",
+        schedule: 'February 8, 18:00',
+        location: "Ca' Vendramin Palace",
+        photo: 'costume_ball.jpg',
+      },
+      {
+        name: 'Gran Corso Mascherato',
+        description:
+          'The main carnival parade featuring participants in elaborate costumes, followed by a costume contest.',
+        schedule: 'February 10, 11:00',
+        location: "St. Mark's Square",
+        photo: 'main_parade.jpg',
+      },
+      {
+        name: 'Grand Canal Gondola and Boat Parade',
+        description:
+          'A spectacular parade of gondolas and boats along the Grand Canal with participants wearing traditional Venetian masks.',
+        schedule: 'February 14, 14:00',
+        location: 'Grand Canal',
+        photo: 'gondola_parade.jpg',
+      },
+      {
+        name: 'Final Grand Ball',
+        description:
+          "The final ball of the Venice Carnival held in the Doge's Palace, marking the end of the festivities.",
+        schedule: 'February 17, 20:00',
+        location: "Doge's Palace",
+        photo: 'grand_ball.jpg',
+      },
+      {
+        name: 'Closing Ceremony',
+        description:
+          "The official closing of the Venice Carnival with a final parade and exhibition of masks in St. Mark's Square.",
+        schedule: 'February 18, 18:00',
+        location: "St. Mark's Square",
+        photo: 'closing_ceremony.jpg',
+      },
+    ],
+    events: [
+      {
+        name: 'Festa delle Marie',
+        description:
+          'The Festival of Mary is one of the oldest and most famous events included in the program of the Venice Carnival. This festival comes from medieval traditions and celebrates the liberation of twelve Venetian girls who were kidnapped by pirates during a solemn engagement ceremony. Traditionally, the festival takes place at the beginning of the carnival and includes a number of festive events, culminating in a solemn parade.',
+        interesting_facts:
+          'The Mari Festival has a centuries-old history that dates back to the 11th century, but was interrupted for several centuries. In 1999, the tradition was restored, and since then the festival has become an important part of the carnival. It is also a popular event among photographers and tourists who like to immerse themselves in the historical atmosphere of Venice.',
+        photo: 'festival_of_mary.jpg',
+        cost: '10 euro',
+        main_features: [
+          {
+            feature: 'Parade of the Twelve Marys',
+            description:
+              "The main event of the festival is the parade of twelve young girls who represent the 'Marys'. The girls are dressed in luxurious Renaissance costumes, and the parade starts in Piazza San Pietro di Castello and goes through the whole city to Piazza San Marco. This parade symbolizes the historical procession when brides and grooms were escorted from their homes to the church for blessing and consecration",
+          },
+          {
+            feature: 'Coronation ceremony',
+            description:
+              "The festival ends with the coronation ceremony of 'Queen Mary' in St. Mark's Square. The winner is chosen from among twelve participants, and she receives the honorary title 'Maria of the Year'. The selection is made by a jury, which includes famous Venetians, as well as the public, who can vote for their favorites..",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const ISLANDS = [
+  {
+    type: 'Island',
+    id: 'is1',
+    events: [
+      {
+        name: 'Murano Island',
+        description:
+          'Murano is one of the most famous islands in the Venetian lagoon, known for its centuries-old glassmaking tradition. The island became renowned for its sophisticated glass products due to the relocation of glassblowers from Venice to prevent fires.',
+        history:
+          "The Murano glassmaking tradition began in the 13th century when Venetian glassblowers moved to the island to reduce fire hazards. Murano quickly became a center of glass production, known for innovative techniques like 'murrine' and 'fazzoletto'.",
+        interesting_facts: [
+          'Glass Museum: Showcases over a thousand years of glassmaking history with both ancient and modern glass products.',
+          'Famous Masters: Known for renowned glassblowers such as Giambattista Graciani and Paolo Veneziani.',
+          'Tourist Attractions: Visitors can see glass-making processes in workshops and purchase exclusive glass items.',
+        ],
+        places: [
+          {
+            name: 'Glass Workshops',
+            description:
+              'Observe the process of creating Venetian glassware and purchase unique products.',
+            photo: 'glass_workshops.jpg',
+          },
+          {
+            name: 'Museum of Glass',
+            description:
+              'Exhibits showcasing both ancient and modern glass, highlighting traditional techniques and innovative designs.',
+            photo: 'museum_of_glass.jpg',
+          },
+        ],
+        photo: 'murano_island.jpg',
+        cost: '27 euro',
+      },
+      {
+        name: 'Burano Island',
+        description:
+          'Burano is known for its brightly colored houses and traditional lace-making. Located about 7 km from Venice, the island is renowned for its vibrant atmosphere and cultural heritage in lace weaving.',
+        history:
+          "Burano's lace-making tradition dates back to the 16th century when local women began creating intricate lace products. This craft has been passed down through generations and remains a symbol of traditional lace.",
+        interesting_facts: [
+          'Bright Houses: The colorful houses on Burano help fishermen navigate and find their way home. The colors allow residents to identify their homes from the sea.',
+          'Lace Center: Burano is famous for high-quality lace products, often showcased at international fairs. Lace-making workshops provide opportunities for tourists to learn the craft.',
+          'Lace Museum: Displays examples of lacework from both vintage and modern eras.',
+        ],
+        places: [
+          {
+            name: 'Lace Workshops',
+            description:
+              'Watch the lace-making process and purchase exquisite lace products.',
+            photo: 'lace_workshops.jpg',
+          },
+          {
+            name: 'Colorful Houses',
+            description:
+              'Photogenic houses painted in vibrant colors, making Burano a visually stunning destination.',
+            photo: 'colorful_houses.jpg',
+          },
+        ],
+        photo: 'burano_island.jpg',
+        cost: '30 euro',
+      },
+    ],
+  },
+];
+
+export const SQUARE = [
+  {
+    id: 'sq1',
+    type: 'Square',
+    events: [
+      {
+        title: 'St. Mark’s Square',
+        description:
+          "St. Mark's Square, or Piazza San Marco, is the central heart of Venice and one of the most significant cultural and historical monuments of the city. It is home to several iconic architectural landmarks, including St. Mark's Basilica and the Campanile. The area is also known for its majestic appearance, elegant cafes, and historical monuments.",
+        features: [
+          {
+            name: "Saint Mark's Cathedral (Basilica di San Marco)",
+            description:
+              "St. Mark's Cathedral is an impressive example of Byzantine architecture that symbolizes the grandeur of Venice. Built in the 9th century, the cathedral is home to numerous religious relics and fine works of art.",
+            history: {
+              origin:
+                'Construction of the cathedral began after the relics of St. Mark were transferred to Venice from Alexandria in 828. Initially, the cathedral was wooden, but due to numerous reconstructions and fires, a new stone church was built, which has survived to this day.',
+              architectural_changes:
+                'The cathedral has gone through several stages of reconstruction and expansion, reflecting different architectural styles. In particular, it was influenced by Byzantine, Romanesque, and Gothic styles.',
+            },
+            interesting_facts: [
+              'Mosaics: The interior of the cathedral is decorated with more than 8,000 square meters of mosaics, depicting biblical stories and historical events.',
+              'Four Horses: The original bronze horses on the facade were brought from Constantinople in the 13th century. Today, they are kept in the museum of the cathedral, with copies displayed on the facade.',
+              "Throne Hall: The 'Palladium' relic, considered a symbol of the city's independence and protection, is kept in the throne hall.",
+            ],
+            visit_information: {
+              opening_hours:
+                'Every day from 9:30 to 17:00. From September to June, the square also opens in the morning for festive masses.',
+              tickets:
+                'Entrance to the main area is free. Tickets are required to access the museums, treasury, and other special areas.',
+            },
+            photo: 'saint_marks_cathedral.jpg',
+          },
+          {
+            name: 'Campanile di San Marco',
+            description:
+              "St. Mark's Campanile is a bell tower that has become one of the most recognizable towers in Venice. At 98.6 meters tall, it offers a panoramic view of the city and the lagoon.",
+            history: {
+              first_construction:
+                'The original campanile was built in the 9th century but was destroyed in a fire in 1902. The new campanile was rebuilt in the same year based on historical drawings and old photographs.',
+              architectural_style:
+                'The Campanile is Romanesque with typical Byzantine architectural elements, including columns and arches.',
+            },
+            interesting_facts: [
+              'The Sound of Bells: The bells located in the campanile were cast in the 15th century and are still used to mark important events in the city.',
+              'Tourist Platform: At the top of the campanile, there is an observation platform offering breathtaking views of Venice and the surrounding islands.',
+            ],
+            visit_information: {
+              hours_of_operation:
+                'Campanile is open daily from 9:00 a.m. to 7:00 p.m., with extended hours during high season.',
+              tickets:
+                'Tickets can be purchased at the venue or online. It is recommended to book in advance, especially during the tourist season.',
+            },
+            photo: 'campanile_di_san_marco.jpg',
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const MUSEUMS = [
+  {
+    id: 'mu1',
+    type: 'Museum',
+    events: [
+      {
+        name: "Gallerie dell'Accademia",
+        description:
+          'The Academy Museum, founded in 1750, is one of the most important museums in Italy. It is famous for its large collection of Venetian paintings, spanning the period from the 13th to the 18th century. The museum is located in the former monastery of St. Nicholas, which was transformed into a museum in the 18th century.',
+        history: {
+          origin:
+            'The museum was created to preserve and study Venetian art. Initially, the collection included works by artists who worked in Venice from the 14th to the 18th centuries.',
+          development:
+            "The museum's collection is constantly expanding thanks to numerous contributions and legacies, including works by masters such as Titian, Giorgione, Tintoretto, and Veronese.",
+        },
+        interesting_facts: [
+          'The Largest Collection: The museum has the largest collection of Venetian paintings in the world.',
+          'Original Paintings: Many of the paintings presented in the museum are originals from the Renaissance and Baroque periods.',
+          'History Station: The museum also functions as an important center for the study of Venetian art history.',
+        ],
+        hours_of_operation:
+          'Open daily from 8:15 a.m. to 7:15 p.m., except Mondays.',
+        photo: 'gallerie_dell_accademia.jpg',
+        cost: '12 euro',
+      },
+      {
+        name: 'Palazzo Ducale',
+        description:
+          "Palazzo Ducale, also known as the Doge's Palace, was the residence of the Doges of Venice and the political center of the city. Built in the Venetian Gothic style, it impresses with its architectural grandeur and artistic design.",
+        history: {
+          origin:
+            'The palace was first built in the 9th century, but many of the parts we see today were added in the 15th century.',
+          reconstructions:
+            'After numerous reconstructions and expansions, the Palazzo Ducale has survived both fires and wars, but has always maintained its political significance.',
+        },
+        interesting_facts: [
+          'Great Hall: Occupying most of the palace, the Great Council Hall is one of the largest and most impressive halls in Europe.',
+          'Hall of the Doges: Known for its lavish frescoes and paintings that reflect the grandeur of Venice during the Renaissance.',
+          'Bridge of Passions: The palace also includes the Bridge of Passions, which connects the palace building with the prison cells where the convicts were kept.',
+        ],
+        opening_hours: 'Open daily from 9:00 a.m. to 7:00 p.m.',
+        photo: 'palazzo_ducale.jpg',
+        cost: '20 euro',
+      },
+      {
+        name: 'Peggy Guggenheim Collection',
+        description:
+          'The Peggy Guggenheim Museum is located in a palace on the Grand Canal and is one of the most significant private collections of modern art. Visitors can enjoy the works of famous artists such as Pablo Picasso, Salvador Dali, and Marcel Duchamp.',
+        history: {
+          origin:
+            'Peggy Guggenheim, an American art collector, founded the museum in 1951 after moving to Venice.',
+          collection:
+            'The collection was assembled by the Guggenheim during her lifetime and includes important works of avant-garde art.',
+        },
+        interesting_facts: [
+          "Personal Palace: The palace that houses the museum was Peggy Guggenheim's personal home and retains some of her private furniture and decor.",
+          'Sculptures on the Street: On the street in front of the museum there are several sculptures that are part of the outdoor exhibition.',
+          'Exhibits: The museum includes works by important artists such as Wassily Kandinsky and is an important center for contemporary art.',
+        ],
+        opening_hours:
+          'Open daily from 10:00 a.m. to 6:00 p.m., except Mondays.',
+        photo: 'peggy_guggenheim_collection.jpg',
+        cost: '15 euro',
+      },
+    ],
+  },
+];
