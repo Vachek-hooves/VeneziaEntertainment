@@ -15,9 +15,9 @@ const MainScreen = ({navigation}) => {
   return (
     <ImageOnBg>
       <FlatList
-        data={VENICE_GOUP}
+        data={ENTERTAINMENT}
         renderItem={({item}) => <Card item={item} navigation={navigation} />}
-        keyExtractor={item => item.gridId}
+        keyExtractor={item => item.id}
         numColumns={2}
         contentContainerStyle={styles.grid}
       />
@@ -29,10 +29,11 @@ export default MainScreen;
 
 const Card = ({item, navigation}) => {
   function eventCall() {
-    console.log(item.gridId, item.keyName);
+    console.log(item.id, item.type);
+    console.log(item);
     navigation.navigate('EventScreen', {
-      itemId: item.gridId,
-      name: item.keyName,
+      itemId: item.id,
+      name: item.type,
     });
   }
 
@@ -42,9 +43,9 @@ const Card = ({item, navigation}) => {
       activeOpacity={0.6}
       onPress={eventCall}>
       <ImageBackground
-        source={{uri: item.image}}
+        source={{uri: item.coverImage}}
         style={styles.image}></ImageBackground>
-      <Text style={styles.text}>{item.keyName}</Text>
+      <Text style={styles.text}>{item.type.toUpperCase()}</Text>
     </TouchableOpacity>
   );
 };
