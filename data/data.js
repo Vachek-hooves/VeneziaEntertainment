@@ -33,7 +33,7 @@ export const VENICE_GOUP = [
     keyName: 'Museum',
     gridId: 'mu1',
     image:
-      'https://images.marketing-italia.eu/uploads/visitvenezia/uploads_articoli/paragrafo/20210801112447Fondaco-dei-Turchi-Museo-di-storia-naturale-Venezia-07-2014.jpgs',
+      'https://www.tripsavvy.com/thmb/kHq1Z_lqfruinHup6vNQnEUYuiA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/DogesPalace3-a60883949d2c48cf9fecf95fc72fd2e3.jpg',
   },
 ];
 
