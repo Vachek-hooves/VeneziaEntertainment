@@ -9,6 +9,7 @@ import {
 import {ImageOnBg} from '../components/layout';
 import {VENICE_GOUP} from '../data/data';
 import {COLOR} from '../contstants/colors';
+import {ENTERTAINMENT} from '../data/data';
 
 const MainScreen = ({navigation}) => {
   return (
