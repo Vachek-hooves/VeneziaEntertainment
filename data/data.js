@@ -1,8 +1,15 @@
-export const VENEZIA = [
+export const VENICE_GOUP = [
+  {keyName: 'Gondola', gridId: 'go1', image: ''},
+  {keyName: 'Theatre', gridId: 'th1', image: ''},
+];
+
+export const GONDOLA = [
   {
-    tours: [
+    id: 'go1',
+    type: 'Gondola',
+    events: [
       {
-        id: 1,
+        id: 'g1',
         name: 'Gondola Rides',
         description: 'A romantic walk along the Grand Canal',
         duration: '1 hour',
@@ -40,9 +47,10 @@ export const VENEZIA = [
           languages: ['English', 'Italian'],
           price: '15 euro',
         },
+        gallery: ['', '', '', ''],
       },
       {
-        id: 2,
+        id: 'g2',
         name: 'Secret Canals of Venice',
         description: "A unique walk through Venice's smaller canals.",
         duration: '90 minutes',
@@ -80,9 +88,10 @@ export const VENEZIA = [
           languages: ['English', 'Italian'],
           price: '15 euro',
         },
+        gallery: ['', '', '', ''],
       },
       {
-        id: 3,
+        id: 'g3',
         name: 'A Night Walk with Music',
         description: 'A night tour of Venice with live music.',
         duration: '90 minutes',
@@ -121,45 +130,76 @@ export const VENEZIA = [
           languages: ['English', 'Italian'],
           price: '15 euro',
         },
+        gallery: ['', '', '', ''],
       },
     ],
   },
-
-  //   {
-  //     object: 'Gondola Rides',
-  //     events: [
-  //       {
-  //         duration: '1 hour',
-  //         place: 'Grand Canal',
-  //         history:
-  //           'The Grand Canal, also known as Canale Grande, is the main waterway of Venice, which has played a key role in the life of the city for centuries. It is located in the shape of an inverted S and has a length of about 3.8 km. Venice, founded in the 5th century, was built on a group of islands in the lagoon of the Adriatic Sea, where deep waters and narrow channels provided protection from attack and facilitated transport.The Grand Canal was the main trade route for Venice, which became one of the largest trading and maritime powers of the Middle Ages. From the very beginning of its use, important buildings and palaces began to appear around the canal, which symbolized the power and wealth of the city. The Grand Canal was important for the transportation of goods such as spices, fabrics and jewels that came from all over the world.',
-  //         facts: [
-  //           "Architectural Heritage: There are more than 170 palaces along the Grand Canal, most of which were built between the 13th and 18th centuries. These palaces display different architectural styles, from Gothic to Renaissance and Baroque. One of the most famous palaces, Ca' d'Oro, is noted for its luxurious golden facade, which gives the building its unique appearance.",
-  //           'Rialto Bridge: Built in 1591, the Rialto Bridge is the oldest and most famous bridge across the Grand Canal. It was designed by Giacomo Toni, and was originally made of wood, but was later replaced by a stone structure. The bridge played an important role in trade operations and is still one of the most famous architectural monuments of Venice.',
-  //         ],
-  //       },
-  //       {
-  //         duration: '1 hour',
-  //         place: "Doge's Palace",
-  //         history:
-  //           "The Doge's Palace, or Palazzo Ducale, is one of the most iconic buildings in Venice and the historic residence of the Doges, who were the heads of the city-republic. The construction of the palace began in the 9th century, but most of the modern building was erected in the 14th and 15th centuries. The palace became a symbol of the political and cultural power of Venice. Government offices, courts and even prisons were located in the palace. The architecture of the palace combines Gothic and Renaissance elements, including exquisite mosaics and sculptures. The interior halls of the palace, such as the Great Hall, where important meetings were held, are decorated with works of art by the great Venetian masters, including Titian and Veronese.",
-  //         facts: [
-  //           "Bridge of Sighs: The Bridge of Sighs, or Ponte dei Sospiri, connects the Doge's Palace with the prison. The name of the bridge comes from the Italian word 'sospiri' (sigh), because the prisoners, passing over the bridge, could have a last look at the city before going behind bars. The bridge is an important symbol of the history of Venice and its legal system.",
-  //           "Architectural Style: The Doge's Palace is an example of the Venetian Gothic style with elements of the Renaissance. Its facade is decorated with numerous decorative elements, such as arches, columns and sculptures, reflecting the cultural and political wealth of Venice at that time.",
-  //         ],
-  //       },
-  //       {
-  //         duration: '1 hour',
-  //         place: "Route details",
-  //         history:
-  //           "The Doge's Palace, or Palazzo Ducale, is one of the most iconic buildings in Venice and the historic residence of the Doges, who were the heads of the city-republic. The construction of the palace began in the 9th century, but most of the modern building was erected in the 14th and 15th centuries. The palace became a symbol of the political and cultural power of Venice. Government offices, courts and even prisons were located in the palace. The architecture of the palace combines Gothic and Renaissance elements, including exquisite mosaics and sculptures. The interior halls of the palace, such as the Great Hall, where important meetings were held, are decorated with works of art by the great Venetian masters, including Titian and Veronese.",
-  //         facts: [
-  //           "Bridge of Sighs: The Bridge of Sighs, or Ponte dei Sospiri, connects the Doge's Palace with the prison. The name of the bridge comes from the Italian word 'sospiri' (sigh), because the prisoners, passing over the bridge, could have a last look at the city before going behind bars. The bridge is an important symbol of the history of Venice and its legal system.",
-  //           "Architectural Style: The Doge's Palace is an example of the Venetian Gothic style with elements of the Renaissance. Its facade is decorated with numerous decorative elements, such as arches, columns and sculptures, reflecting the cultural and political wealth of Venice at that time.",
-  //         ],
-  //       },
-  //       {},
-  //       {},
-  //     ],
-  //   },
 ];
+export const THEATRE = [
+  {
+    type: 'Theatre',
+    id: 'th1',
+    events: [
+      {
+        id: 't1',
+        name: 'Nabucco',
+        description:
+          "The opera 'Trumpet' is based on biblical events, specifically the story of the Babylonian king Nebuchadnezzar II.",
+        plot: "King Nebuchadnezzar II conquers Jerusalem and captures the Jews. The famous 'Va, pensiero' scene expresses the longing for homeland.",
+        composer: 'Giuseppe Verdi',
+        key_performers: {
+          nebucadnezzar: 'Tenor',
+          abigail: 'Soprano',
+          zechariah: 'Baritone',
+        },
+        details: {
+          premiere_date: 'February 6, 2024',
+          duration: '3 hours 15 minutes',
+          director: 'Francesco Mandelli',
+          conductor: 'Gianluca Capuano',
+        },
+      },
+      {
+        id: 't2',
+        name: 'Manon Lescaut',
+        composer: 'Giacomo Puccini',
+        description:
+          'Manon Lescaut tells the tragic story of a young woman in search of love and wealth.',
+        plot: 'Manon falls in love with Des Graves, but their relationship is filled with passion and betrayal. She eventually dies as punishment for her actions.',
+        key_performers: {
+          manon: 'Soprano',
+          des_graves: 'Tenor',
+          lescaut: 'Baritone',
+        },
+        details: {
+          premiere_date: 'February 15, 2024',
+          duration: '2 hours 50 minutes',
+          director: 'Silvana Ricci',
+          conductor: 'Lorenzo Squro',
+          cost: '39 euros',
+        },
+      },
+      {
+        id: 't3',
+        bname: 'Giselle',
+        composer: 'Adolphe Adam',
+        description:
+          'A classic ballet about tragic love and ghostly women who return from the other world.',
+        plot: "Giselle dies of grief when she discovers Prince Albert's true identity, becoming a ghost seeking revenge.",
+        key_performers: {
+          giselle: 'Premier ballerina',
+          albert: 'Soloist',
+          myrtle: 'Ballerina',
+        },
+        details: {
+          premiere_date: 'February 28, 2024',
+          duration: '2 hours 20 minutes',
+          choreographer: 'Giovanni Riccardo',
+          conductor: 'Lorenzo Belmonte',
+          cost: '50 euros',
+        },
+      },
+    ],
+  },
+];
+// export const THEATRE = [];

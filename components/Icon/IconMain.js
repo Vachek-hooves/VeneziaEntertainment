@@ -6,7 +6,7 @@ const IconMain = ({focused}) => {
     <View
       style={{
         padding: 9,
-        backgroundColor: focused ? COLOR.gold : 'transparent',
+        backgroundColor: focused ? COLOR.gold : COLOR.white + 30,
         borderRadius: 50,
       }}>
       <Image
