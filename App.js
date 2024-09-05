@@ -1,11 +1,11 @@
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {MainScreen, MapScreen, WelcomeScreen} from './screen';
+import {MainScreen, MapScreen, UserScreen, WelcomeScreen} from './screen';
 import {StyleSheet} from 'react-native';
 import {COLOR} from './contstants/colors';
 import IconMap from './components/Icon/IconMap';
-import {IconMain} from './components/Icon';
+import {IconMain, IconMask} from './components/Icon';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -30,6 +30,11 @@ const TabNavigationMenu = () => {
         name="MapScreen"
         component={MapScreen}
         options={{tabBarIcon: ({focused}) => <IconMap focused={focused} />}}
+      />
+      <Tab.Screen
+        name="UserScreen"
+        component={UserScreen}
+        options={{tabBarIcon: ({focused}) => <IconMask focused={focused} />}}
       />
     </Tab.Navigator>
   );
