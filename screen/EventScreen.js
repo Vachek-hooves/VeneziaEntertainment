@@ -13,11 +13,12 @@ import {COLOR} from '../contstants/colors';
 
 const EventScreen = ({route}) => {
   const {item} = route.params;
-  console.log('ITEM', item);
+  //   console.log('ITEM', item);
 
   const renderGalleryItem = ({item}) => (
     <Image source={{uri: item}} style={styles.galleryImage} />
   );
+
   const renderTheatreEvent = ({item: event}) => {
     // Перетворення об'єкта key_performers в масив пар
     const keyPerformersArray = Object.entries(event.key_performers || {}).map(
@@ -340,6 +341,124 @@ const EventScreen = ({route}) => {
     );
   };
 
+  const renderMuseumEvent = ({item: museum}) => {
+    console.log(museum);
+    return (
+      //   <View style={styles.museumContainer}>
+      //     {/* Картинка музею */}
+      //     <Image source={{ uri: museum.coverImage }} style={styles.coverImage} />
+
+      //     {/* Рендеринг подій музею */}
+      //     {museum.events.map((event, index) => (
+      //       <View key={index} style={styles.eventContainer}>
+      //         {/* Назва події */}
+      //         <Text style={styles.eventTitle}>{event.name}</Text>
+
+      //         {/* Опис події */}
+      //         <Text style={styles.eventDescription}>{event.description}</Text>
+
+      //         {/* Історія події */}
+      //         <View style={styles.historyContainer}>
+      //           <Text style={styles.historyTitle}>History</Text>
+      //           {event.history?.origin && (
+      //             <Text>
+      //               <Text style={styles.historyLabel}>Origin:</Text> {event.history.origin}
+      //             </Text>
+      //           )}
+      //           {event.history?.development && (
+      //             <Text>
+      //               <Text style={styles.historyLabel}>Development:</Text> {event.history.development}
+      //             </Text>
+      //           )}
+      //           {event.history?.reconstructions && (
+      //             <Text>
+      //               <Text style={styles.historyLabel}>Reconstructions:</Text> {event.history.reconstructions}
+      //             </Text>
+      //           )}
+      //         </View>
+
+      //         {/* Цікаві факти */}
+      //         {event.interesting_facts && (
+      //           <View style={styles.factsContainer}>
+      //             <Text style={styles.factsTitle}>Interesting Facts</Text>
+      //             {event.interesting_facts.map((fact, factIndex) => (
+      //               <Text key={factIndex} style={styles.factItem}>
+      //                 - {fact}
+      //               </Text>
+      //             ))}
+      //           </View>
+      //         )}
+
+      //         {/* Інформація про години роботи */}
+      //         <Text style={styles.hoursTitle}>Opening Hours</Text>
+      //         <Text>{event.hours_of_operation || event.opening_hours}</Text>
+
+      //         {/* Вартість входу */}
+      //         <Text style={styles.costTitle}>Cost</Text>
+      //         <Text>{event.cost}</Text>
+
+      //         {/* Фото події */}
+      //         <Image source={{ uri: event.photo }} style={styles.photo} />
+      //       </View>
+      //     ))}
+      //   </View>
+
+      <View style={styles.eventContainer}>
+        <Text style={styles.eventTitle}>{museum.name}</Text>
+        {museum.photo && (
+          <Image source={{uri: museum.photo}} style={styles.photo} />
+        )}
+        <Text style={styles.eventDescription}>{museum.description}</Text>
+        <View style={styles.historyContainer}>
+          <Text style={styles.historyTitle}>History</Text>
+          <Text>
+            <Text style={styles.historyLabel}>Origin:</Text>{' '}
+            {museum.history.origin}
+          </Text>
+          {museum.history.development && (
+            <View style={{marginVertical: 10}}>
+              <Text>
+                <Text style={styles.historyLabel}>Development:</Text>{' '}
+                {museum.history.development}
+              </Text>
+            </View>
+          )}
+          {museum.history.reconstructions && (
+            <View style={{marginVertical: 10}}>
+              <Text>
+                <Text style={styles.historyLabel}>Reconstructions:</Text>{' '}
+                {museum.history.reconstructions}
+              </Text>
+            </View>
+          )}
+          {museum.history.collection && (
+            <View style={{marginVertical: 10}}>
+              <Text>
+                <Text style={styles.historyLabel}>Collection:</Text>{' '}
+                {museum.history.collection}
+              </Text>
+            </View>
+          )}
+        </View>
+        {museum.interesting_facts && museum.interesting_facts.length > 0 && (
+          <View style={styles.factsContainer}>
+            <Text style={styles.factsTitle}>Interesting Facts</Text>
+            {museum.interesting_facts.map((fact, factIndex) => (
+              <Text key={factIndex} style={styles.factItem}>
+                - {fact}
+              </Text>
+            ))}
+          </View>
+        )}
+        <Text style={styles.hoursTitle}>Opening Hours</Text>
+        <Text>{museum.hours_of_operation || museum.opening_hours}</Text>
+        <View style={styles.costContainer}>
+          <Text>Cost: {museum.cost}</Text>
+        </View>
+      </View>
+    );
+  };
+
   const renderEventItem = ({item: event}) => {
     switch (item.type) {
       case 'Theatre':
@@ -352,6 +471,8 @@ const EventScreen = ({route}) => {
         return renderIslandEvent({item: event});
       case 'Square':
         return renderSquareEvent({item: event});
+      case 'Museum':
+        return renderMuseumEvent({item: event});
       default:
         return null;
     }
@@ -419,7 +540,8 @@ const styles = StyleSheet.create({
   attractionText: {
     fontSize: 18,
     color: COLOR.black,
-    marginLeft: 10,color: COLOR.blue
+    marginLeft: 10,
+    color: COLOR.blue,
   },
   galleryContainer: {
     marginTop: 10,
@@ -492,7 +614,8 @@ const styles = StyleSheet.create({
   },
   factItem: {
     fontSize: 16,
-  },visitInfoContainer: {
+  },
+  visitInfoContainer: {
     marginBottom: 16,
   },
   visitInfoTitle: {

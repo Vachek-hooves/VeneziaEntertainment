@@ -503,7 +503,8 @@ export const ENTERTAINMENT = [
         ],
         hours_of_operation:
           'Open daily from 8:15 a.m. to 7:15 p.m., except Mondays.',
-        photo: 'gallerie_dell_accademia.jpg',
+        photo:
+          'https://upload.wikimedia.org/wikipedia/commons/1/1c/Accademia_%28Venice%29.jpg',
         cost: '12 euro',
       },
       {
@@ -522,7 +523,8 @@ export const ENTERTAINMENT = [
           'Bridge of Passions: The palace also includes the Bridge of Passions, which connects the palace building with the prison cells where the convicts were kept.',
         ],
         opening_hours: 'Open daily from 9:00 a.m. to 7:00 p.m.',
-        photo: 'palazzo_ducale.jpg',
+        photo:
+          'https://www.weekendinitaly.com/media/5/0/503/slide_big_doge-palace-2.jpg',
         cost: '20 euro',
       },
       {
@@ -542,7 +544,8 @@ export const ENTERTAINMENT = [
         ],
         opening_hours:
           'Open daily from 10:00 a.m. to 6:00 p.m., except Mondays.',
-        photo: 'peggy_guggenheim_collection.jpg',
+        photo:
+          'https://www.mypassvenezia.it/wp-content/uploads/2021/06/peggy-guggenheim.jpg',
         cost: '15 euro',
       },
     ],
