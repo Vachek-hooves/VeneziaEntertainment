@@ -83,7 +83,13 @@ export const ENTERTAINMENT = [
           languages: ['English', 'Italian'],
           price: '15 euro',
         },
-        gallery: ['', '', '', ''],
+        gallery: [
+          'https://www.planetware.com/photos-large/I/italy-venice-grand-canal-boats-and-santa-maria-della-salute.jpg',
+          'https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/27/5b/0f.jpg',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWcFwHHEadfREw4sfj399M8VVm5w63tt1Wjw&s',
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg/1200px-%28Venice%29_Doge%27s_Palace_and_campanile_of_St._Mark%27s_Basilica_facing_the_sea.jpg',
+          'https://fascination-venice.com/wp-content/uploads/2019/12/Doges_Palace_02.jpg',
+        ],
       },
       {
         id: 'g2',
@@ -124,7 +130,13 @@ export const ENTERTAINMENT = [
           languages: ['English', 'Italian'],
           price: '15 euro',
         },
-        gallery: ['', '', '', ''],
+        gallery: [
+          'https://cdn.audleytravel.com/3915/2797/79/1018537-gondolas-venice.jpg',
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlQGddsQQaS8HcID7dbidTEEYNqNdSDXZunQ&s',
+          'https://bonjourvenise.fr/wp-content/uploads/2024/02/v2-7nc0w-rin8z.jpg',
+          'https://bonjourvenise.fr/wp-content/uploads/2024/02/v2-7nc2u-av9ma.jpg',
+          'https://careergappers.com/wp-content/uploads/2023/03/Venice-canals-at-night-Italian-flag-lights.jpg',
+        ],
       },
       {
         id: 'g3',
@@ -166,15 +178,21 @@ export const ENTERTAINMENT = [
           languages: ['English', 'Italian'],
           price: '15 euro',
         },
-        gallery: ['', '', '', ''],
+        gallery: [
+          'https://travel2next.com/wp-content/uploads/gondolas-in-venice-at-night.jpg',
+          'https://d3dqioy2sca31t.cloudfront.net/Projects/cms/production/000/023/888/medium/9ec1da320fd372774570da969212f030/italy-venice-st-marks-square-051018-az.jpg',
+          'https://i0.wp.com/abontempoabroad.com/wp-content/uploads/2021/01/DSC00195JPG.jpg?fit=1873%2C1522&ssl=1',
+          'https://upload.wikimedia.org/wikipedia/commons/7/76/City_landscape_Venice_at_night_light_%288174786148%29.jpg',
+          'https://images.unsplash.com/photo-1528834007306-00e5bcb8ad39?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHZlbmljZSUyMG5pZ2h0fGVufDB8fDB8fHww',
+        ],
       },
     ],
   },
   {
+    id: 'th1',
     type: 'Theatre',
     coverImage:
       'https://fascination-venice.com/wp-content/uploads/2019/12/La_Fenice_Opening_Times_04.jpg',
-    id: 'th1',
     events: [
       {
         id: 't1',
