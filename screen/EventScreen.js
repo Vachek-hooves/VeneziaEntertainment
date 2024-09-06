@@ -13,7 +13,7 @@ import {COLOR} from '../contstants/colors';
 
 const EventScreen = ({route}) => {
   const {item} = route.params;
-  //   console.log(item);
+  console.log('ITEM', item);
 
   const renderGalleryItem = ({item}) => (
     <Image source={{uri: item}} style={styles.galleryImage} />
@@ -67,7 +67,7 @@ const EventScreen = ({route}) => {
       </View>
     );
   };
-  
+
   const renderGondolaEvent = ({item: event}) => (
     <View key={event.id} style={styles.eventContainer}>
       <Text style={styles.eventTitle}>{event.name}</Text>
@@ -116,7 +116,7 @@ const EventScreen = ({route}) => {
   const renderCarnivalEvent = ({item: event}) => (
     <View key={event.id} style={styles.eventContainer}>
       <Text style={styles.eventTitle}>Carnival Events</Text>
-  
+
       {/* Перевірка для основних подій */}
       {event.schedule && (
         <View>
@@ -143,7 +143,7 @@ const EventScreen = ({route}) => {
           ))}
         </View>
       )}
-  
+
       {/* Перевірка для основних подій, якщо є */}
       {event.mainEvents && (
         <View>
@@ -154,7 +154,9 @@ const EventScreen = ({route}) => {
               <Text style={styles.eventDescription}>
                 {featuredEvent.description}
               </Text>
-              <Text style={styles.eventCost}>Cost: {featuredEvent.cost}</Text>
+              <View style={styles.costContainer}>
+                <Text style={styles.cost}>Cost: {featuredEvent.cost}</Text>
+              </View>
               {featuredEvent.main_features && (
                 <View>
                   <Text style={styles.sectionTitle}>Main Features:</Text>
@@ -181,6 +183,84 @@ const EventScreen = ({route}) => {
     </View>
   );
 
+  const renderIslandEvent = ({item: event}) => (
+    // console.log(item),
+    <View style={styles.islandContainer}>
+      <Text style={styles.islandTitle}>
+        {item.type}: {item.events.name}
+      </Text>
+      <Image source={{uri: event.coverImage}} style={styles.islandCoverImage} />
+
+      {item.events.map((event, index) => (
+        <View key={index} style={styles.eventContainer}>
+          <Text style={styles.eventTitle}>{event.name}</Text>
+          <Image source={{uri: event.photo}} style={styles.eventImage} />
+          <Text style={styles.eventDescription}>{event.description}</Text>
+          <Text style={styles.eventHistory}>History: {event.history}</Text>
+
+          {/* Рендеринг цікавих фактів */}
+          <Text style={styles.sectionTitle}>Interesting Facts:</Text>
+          {event.interesting_facts.map((fact, factIndex) => (
+            <Text key={factIndex} style={styles.interestingFact}>
+              - {fact}
+            </Text>
+          ))}
+
+          {/* Рендеринг місць */}
+          <Text style={styles.sectionTitle}>Places to Visit:</Text>
+          {event.places.map((place, placeIndex) => (
+            <View key={placeIndex} style={styles.placeContainer}>
+              <Text style={styles.placeName}>{place.name}</Text>
+              <Text style={styles.placeDescription}>{place.description}</Text>
+              {place.photo && (
+                <Image source={{uri: place.photo}} style={styles.placeImage} />
+              )}
+            </View>
+          ))}
+          <View style={styles.costContainer}>
+            <Text style={styles.cost}>Cost: {event.cost}</Text>
+          </View>
+        </View>
+      ))}
+
+      {/* {event?.map((eventDetail, index) => (
+          <View key={index} style={styles.eventDetailContainer}>
+            <Text style={styles.eventName}>{eventDetail.name}</Text>
+            <Text style={styles.eventDescription}>
+              {eventDetail.description}
+            </Text>
+            <Text style={styles.eventCost}>Cost: {eventDetail.cost}</Text>
+            <Text style={styles.eventHistory}>
+              History: {eventDetail.history}
+            </Text>
+
+           
+            <Text style={styles.sectionTitle}>Interesting Facts:</Text>
+            {eventDetail.interesting_facts.map((fact, factIndex) => (
+              <Text key={factIndex} style={styles.interestingFact}>
+                - {fact}
+              </Text>
+            ))}
+
+         
+            <Text style={styles.sectionTitle}>Places to Visit:</Text>
+            {eventDetail.places.map((place, placeIndex) => (
+              <Text key={placeIndex} style={styles.place}>
+                - {place}
+              </Text>
+            ))}
+
+           
+            {eventDetail.photo && (
+              <Image
+                source={{uri: eventDetail.photo}}
+                style={styles.eventImage}
+              />
+            )}
+          </View>
+        ))} */}
+    </View>
+  );
   const renderEventItem = ({item: event}) => {
     switch (item.type) {
       case 'Theatre':
@@ -189,6 +269,8 @@ const EventScreen = ({route}) => {
         return renderGondolaEvent({item: event});
       case 'Carnival':
         return renderCarnivalEvent({item: event});
+      case 'Island':
+        return renderIslandEvent({item: event});
       default:
         return null;
     }
@@ -278,5 +360,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: COLOR.black,
     marginBottom: 10,
+  },
+  cost: {
+    textAlign: 'center',
+  },
+  costContainer: {
+    width: '30%',
+    backgroundColor: COLOR.gold,
+    padding: 5,
+    borderRadius: 12,
+    marginVertical: 5,
   },
 });

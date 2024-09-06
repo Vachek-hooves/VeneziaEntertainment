@@ -383,7 +383,8 @@ export const ENTERTAINMENT = [
             photo: 'museum_of_glass.jpg',
           },
         ],
-        photo: 'murano_island.jpg',
+        photo:
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR10-k-k0p4_T8NTO0lAoFNN8wXvtyvI1tz2A&s',
         cost: '27 euro',
       },
       {
@@ -411,7 +412,7 @@ export const ENTERTAINMENT = [
             photo: 'colorful_houses.jpg',
           },
         ],
-        photo: 'burano_island.jpg',
+        photo: 'https://expertvagabond.com/wp-content/uploads/burano-island-town.jpg',
         cost: '30 euro',
       },
     ],
