@@ -2,6 +2,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {
+  CalendarScreen,
   EventScreen,
   MainScreen,
   MapScreen,
@@ -11,7 +12,7 @@ import {
 import {StyleSheet} from 'react-native';
 import {COLOR} from './contstants/colors';
 import IconMap from './components/Icon/IconMap';
-import {IconMain, IconMask} from './components/Icon';
+import {IconCalendar, IconMain, IconMask} from './components/Icon';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,6 +37,13 @@ const TabNavigationMenu = () => {
         name="MapScreen"
         component={MapScreen}
         options={{tabBarIcon: ({focused}) => <IconMap focused={focused} />}}
+      />
+      <Tab.Screen
+        name="CalendarScreen"
+        component={CalendarScreen}
+        options={{
+          tabBarIcon: ({focused}) => <IconCalendar focused={focused} />,
+        }}
       />
       <Tab.Screen
         name="UserScreen"
