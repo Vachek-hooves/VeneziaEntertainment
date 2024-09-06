@@ -67,8 +67,8 @@ const EventScreen = ({route}) => {
       </View>
     );
   };
-  // Рендеринг події типу Attractions (стандартний варіант)
-  const renderAttractionEvent = ({item: event}) => (
+  
+  const renderGondolaEvent = ({item: event}) => (
     <View key={event.id} style={styles.eventContainer}>
       <Text style={styles.eventTitle}>{event.name}</Text>
       <Text style={styles.eventDescription}>{event.description}</Text>
@@ -185,8 +185,8 @@ const EventScreen = ({route}) => {
     switch (item.type) {
       case 'Theatre':
         return renderTheatreEvent({item: event});
-      case 'Attraction':
-        return renderAttractionEvent({item: event});
+      case 'Gondola':
+        return renderGondolaEvent({item: event});
       case 'Carnival':
         return renderCarnivalEvent({item: event});
       default:
