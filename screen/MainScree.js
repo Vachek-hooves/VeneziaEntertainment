@@ -32,8 +32,7 @@ const Card = ({item, navigation}) => {
     console.log(item.id, item.type);
     console.log(item);
     navigation.navigate('EventScreen', {
-      itemId: item.id,
-      name: item.type,
+      item,
     });
   }
 

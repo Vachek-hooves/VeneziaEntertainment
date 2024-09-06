@@ -1,13 +1,16 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {ScrollView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {ImageOnBg} from '../components/layout';
+import {RenderMainImage} from '../components/EventScreeComponents';
 
 const EventScreen = ({route}) => {
-  const {itemId, name} = route.params;
+  const {item} = route.params;
+  console.log(item);
 
   return (
     <ImageOnBg>
-      <Text>Event screen</Text>
+      <RenderMainImage image={item.coverImage} />
+      <ScrollView></ScrollView>
     </ImageOnBg>
   );
 };
