@@ -13,7 +13,7 @@ import {COLOR} from '../contstants/colors';
 
 const EventScreen = ({route}) => {
   const {item} = route.params;
-  console.log(item);
+  //   console.log(item);
 
   const renderGalleryItem = ({item}) => (
     <Image source={{uri: item}} style={styles.galleryImage} />
@@ -113,11 +113,84 @@ const EventScreen = ({route}) => {
       />
     </View>
   );
+  const renderCarnivalEvent = ({item: event}) => (
+    <View key={event.id} style={styles.eventContainer}>
+      <Text style={styles.eventTitle}>Carnival Events</Text>
+  
+      {/* Перевірка для основних подій */}
+      {event.schedule && (
+        <View>
+          <Text style={styles.sectionTitle}>Schedule:</Text>
+          {event.schedule.map((eventItem, index) => (
+            <View key={index} style={styles.eventDetailContainer}>
+              {eventItem.image && (
+                <Image
+                  source={{uri: eventItem.image}}
+                  style={styles.eventImage}
+                />
+              )}
+              <Text style={styles.eventTitle}>{eventItem.name}</Text>
+              <Text style={styles.eventDescription}>
+                {eventItem.description}
+              </Text>
+              <Text style={styles.eventDuration}>
+                Schedule: {eventItem.schedule}
+              </Text>
+              <Text style={styles.eventLocation}>
+                Location: {eventItem.location}
+              </Text>
+            </View>
+          ))}
+        </View>
+      )}
+  
+      {/* Перевірка для основних подій, якщо є */}
+      {event.mainEvents && (
+        <View>
+          <Text style={styles.sectionTitle}>Featured Events:</Text>
+          {event.mainEvents.map((featuredEvent, index) => (
+            <View key={index} style={styles.eventDetailContainer}>
+              <Text style={styles.eventTitle}>{featuredEvent.name}</Text>
+              <Text style={styles.eventDescription}>
+                {featuredEvent.description}
+              </Text>
+              <Text style={styles.eventCost}>Cost: {featuredEvent.cost}</Text>
+              {featuredEvent.main_features && (
+                <View>
+                  <Text style={styles.sectionTitle}>Main Features:</Text>
+                  {featuredEvent.main_features.map((feature, index) => (
+                    <View key={index} style={styles.featureContainer}>
+                      <Text style={styles.featureName}>{feature.feature}</Text>
+                      <Text style={styles.featureDescription}>
+                        {feature.description}
+                      </Text>
+                    </View>
+                  ))}
+                </View>
+              )}
+              {featuredEvent.photo && (
+                <Image
+                  source={{uri: featuredEvent.photo}}
+                  style={styles.featureImage}
+                />
+              )}
+            </View>
+          ))}
+        </View>
+      )}
+    </View>
+  );
+
   const renderEventItem = ({item: event}) => {
-    if (item.type === 'Theatre') {
-      return renderTheatreEvent({item: event});
-    } else {
-      return renderAttractionEvent({item: event});
+    switch (item.type) {
+      case 'Theatre':
+        return renderTheatreEvent({item: event});
+      case 'Attraction':
+        return renderAttractionEvent({item: event});
+      case 'Carnival':
+        return renderCarnivalEvent({item: event});
+      default:
+        return null;
     }
   };
   return (
@@ -125,7 +198,7 @@ const EventScreen = ({route}) => {
       <RenderMainImage image={item.coverImage} />
       <FlatList
         data={item.events}
-        keyExtractor={event => event.id}
+        keyExtractor={(image, index) => index.toString()}
         renderItem={renderEventItem}
         contentContainerStyle={styles.contentContainer}
       />

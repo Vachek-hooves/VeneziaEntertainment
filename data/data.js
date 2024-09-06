@@ -266,75 +266,87 @@ export const ENTERTAINMENT = [
     type: 'Carnival',
     coverImage:
       'https://i0.wp.com/www.touristitaly.com/wp-content/uploads/2024/01/shutterstock_1008425929-scaled.jpg?fit=2560%2C1707&ssl=1',
-    schedule: [
-      {
-        name: 'Flight of the Angel',
-        description:
-          "A symbolic event where an 'Angel' descends from the bell tower of St. Mark's Basilica on a rope, symbolizing a heavenly blessing for the carnival.",
-        schedule: 'February 6, 11:00',
-        location: "St. Mark's Square",
-        photo: 'flight_of_the_angel.jpg',
-      },
-      {
-        name: 'Costume Balls',
-        description:
-          "Luxurious costume balls take place during the carnival, including a special 'Mary of the Year' Ball and the famous Venetian Masquerade Ball.",
-        schedule: 'February 8, 18:00',
-        location: "Ca' Vendramin Palace",
-        photo: 'costume_ball.jpg',
-      },
-      {
-        name: 'Gran Corso Mascherato',
-        description:
-          'The main carnival parade featuring participants in elaborate costumes, followed by a costume contest.',
-        schedule: 'February 10, 11:00',
-        location: "St. Mark's Square",
-        photo: 'main_parade.jpg',
-      },
-      {
-        name: 'Grand Canal Gondola and Boat Parade',
-        description:
-          'A spectacular parade of gondolas and boats along the Grand Canal with participants wearing traditional Venetian masks.',
-        schedule: 'February 14, 14:00',
-        location: 'Grand Canal',
-        photo: 'gondola_parade.jpg',
-      },
-      {
-        name: 'Final Grand Ball',
-        description:
-          "The final ball of the Venice Carnival held in the Doge's Palace, marking the end of the festivities.",
-        schedule: 'February 17, 20:00',
-        location: "Doge's Palace",
-        photo: 'grand_ball.jpg',
-      },
-      {
-        name: 'Closing Ceremony',
-        description:
-          "The official closing of the Venice Carnival with a final parade and exhibition of masks in St. Mark's Square.",
-        schedule: 'February 18, 18:00',
-        location: "St. Mark's Square",
-        photo: 'closing_ceremony.jpg',
-      },
-    ],
+
     events: [
       {
-        name: 'Festa delle Marie',
-        description:
-          'The Festival of Mary is one of the oldest and most famous events included in the program of the Venice Carnival. This festival comes from medieval traditions and celebrates the liberation of twelve Venetian girls who were kidnapped by pirates during a solemn engagement ceremony. Traditionally, the festival takes place at the beginning of the carnival and includes a number of festive events, culminating in a solemn parade.',
-        interesting_facts:
-          'The Mari Festival has a centuries-old history that dates back to the 11th century, but was interrupted for several centuries. In 1999, the tradition was restored, and since then the festival has become an important part of the carnival. It is also a popular event among photographers and tourists who like to immerse themselves in the historical atmosphere of Venice.',
-        photo: 'festival_of_mary.jpg',
-        cost: '10 euro',
-        main_features: [
+        schedule: [
           {
-            feature: 'Parade of the Twelve Marys',
+            name: 'Flight of the Angel',
             description:
-              "The main event of the festival is the parade of twelve young girls who represent the 'Marys'. The girls are dressed in luxurious Renaissance costumes, and the parade starts in Piazza San Pietro di Castello and goes through the whole city to Piazza San Marco. This parade symbolizes the historical procession when brides and grooms were escorted from their homes to the church for blessing and consecration",
+              "A symbolic event where an 'Angel' descends from the bell tower of St. Mark's Basilica on a rope, symbolizing a heavenly blessing for the carnival.",
+            schedule: 'February 6, 11:00',
+            location: "St. Mark's Square",
+            image:
+              'https://img.jakpost.net/c/2019/02/25/2019_02_25_66241_1551069916._large.jpg',
           },
           {
-            feature: 'Coronation ceremony',
+            name: 'Costume Balls',
             description:
-              "The festival ends with the coronation ceremony of 'Queen Mary' in St. Mark's Square. The winner is chosen from among twelve participants, and she receives the honorary title 'Maria of the Year'. The selection is made by a jury, which includes famous Venetians, as well as the public, who can vote for their favorites..",
+              "Luxurious costume balls take place during the carnival, including a special 'Mary of the Year' Ball and the famous Venetian Masquerade Ball.",
+            schedule: 'February 8, 18:00',
+            location: "Ca' Vendramin Palace",
+            image:
+              'https://pointsmilesandbling.com/wp-content/uploads/2023/03/20230219_105430-scaled.jpg',
+          },
+          {
+            name: 'Gran Corso Mascherato',
+            description:
+              'The main carnival parade featuring participants in elaborate costumes, followed by a costume contest.',
+            schedule: 'February 10, 11:00',
+            location: "St. Mark's Square",
+            image:
+              'https://www.venice-carnival-italy.com/wp-content/uploads/2019/11/venice-carnival-2019-masks.jpg',
+          },
+          {
+            name: 'Grand Canal Gondola and Boat Parade',
+            description:
+              'A spectacular parade of gondolas and boats along the Grand Canal with participants wearing traditional Venetian masks.',
+            schedule: 'February 14, 14:00',
+            location: 'Grand Canal',
+            image:
+              'https://img.freepik.com/premium-photo/venice-italy-grand-canal-venice-carnival-opening-with-gondola-boat-water-parade_236845-913.jpg',
+          },
+          {
+            name: 'Final Grand Ball',
+            description:
+              "The final ball of the Venice Carnival held in the Doge's Palace, marking the end of the festivities.",
+            schedule: 'February 17, 20:00',
+            location: "Doge's Palace",
+            image:
+              'https://www.venice-etc.com/wp-content/uploads/2015/12/Venice-Carnival-20161.jpg',
+          },
+          {
+            name: 'Closing Ceremony',
+            description:
+              "The official closing of the Venice Carnival with a final parade and exhibition of masks in St. Mark's Square.",
+            schedule: 'February 18, 18:00',
+            location: "St. Mark's Square",
+            image: 'https://media.timeout.com/images/105412070/image.jpg',
+          },
+        ],
+      },
+      {
+        mainEvents: [
+          {
+            name: 'Festa delle Marie',
+            description:
+              'The Festival of Mary is one of the oldest and most famous events included in the program of the Venice Carnival. This festival comes from medieval traditions and celebrates the liberation of twelve Venetian girls who were kidnapped by pirates during a solemn engagement ceremony. Traditionally, the festival takes place at the beginning of the carnival and includes a number of festive events, culminating in a solemn parade.',
+            interesting_facts:
+              'The Mari Festival has a centuries-old history that dates back to the 11th century, but was interrupted for several centuries. In 1999, the tradition was restored, and since then the festival has become an important part of the carnival. It is also a popular event among photographers and tourists who like to immerse themselves in the historical atmosphere of Venice.',
+            photo: 'festival_of_mary.jpg',
+            cost: '10 euro',
+            main_features: [
+              {
+                feature: 'Parade of the Twelve Marys',
+                description:
+                  "The main event of the festival is the parade of twelve young girls who represent the 'Marys'. The girls are dressed in luxurious Renaissance costumes, and the parade starts in Piazza San Pietro di Castello and goes through the whole city to Piazza San Marco. This parade symbolizes the historical procession when brides and grooms were escorted from their homes to the church for blessing and consecration",
+              },
+              {
+                feature: 'Coronation ceremony',
+                description:
+                  "The festival ends with the coronation ceremony of 'Queen Mary' in St. Mark's Square. The winner is chosen from among twelve participants, and she receives the honorary title 'Maria of the Year'. The selection is made by a jury, which includes famous Venetians, as well as the public, who can vote for their favorites..",
+              },
+            ],
           },
         ],
       },

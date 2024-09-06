@@ -13,6 +13,7 @@ const RenderMainImage = ({image}) => {
           //   justifyContent: 'center',
           borderRadius: 12,
           overflow: 'hidden',
+          marginBottom:10
         }}>
         <IconBack />
       </ImageBackground>
