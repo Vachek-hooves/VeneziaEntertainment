@@ -3,4 +3,5 @@ export const COLOR = {
   black: '#000000',
   inActive: '#E9EFEC',
   white: '#F5F5F5',
+  blue: '#071952',
 };

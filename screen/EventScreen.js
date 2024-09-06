@@ -74,7 +74,6 @@ const EventScreen = ({route}) => {
       <Text style={styles.eventDescription}>{event.description}</Text>
       <Text style={styles.eventDuration}>Duration: {event.duration}</Text>
 
-      {/* Основні атракції */}
       <Text style={styles.sectionTitle}>Main Attractions:</Text>
       <FlatList
         data={event.mainAttractions}
@@ -101,7 +100,6 @@ const EventScreen = ({route}) => {
         )}
       />
 
-      {/* Галерея */}
       <Text style={styles.sectionTitle}>Gallery:</Text>
       <FlatList
         data={event.gallery}
@@ -261,6 +259,87 @@ const EventScreen = ({route}) => {
         ))} */}
     </View>
   );
+
+  const renderSquareEvent = ({item: event}) => {
+    return (
+      <ScrollView style={styles.eventContainer}>
+        {/* Назва площі */}
+        <Text style={styles.title}>{event.title}</Text>
+        {/* Опис площі */}
+        <Text style={styles.description}>{event.description}</Text>
+
+        {/* Особливості площі */}
+        {event.features.map((feature, featureIndex) => (
+          <View key={featureIndex} style={styles.featureContainer}>
+            {/* Назва об'єкта */}
+            <Text style={styles.featureTitle}>{feature.name}</Text>
+            {/* Опис об'єкта */}
+            <Text style={styles.featureDescription}>{feature.description}</Text>
+
+            {/* Історична інформація об'єкта */}
+            <View style={styles.historyContainer}>
+              <Text style={styles.historyTitle}>History</Text>
+              {feature.history?.origin && (
+                <Text>
+                  <Text style={styles.historyLabel}>Origin:</Text>{' '}
+                  {feature.history.origin}
+                </Text>
+              )}
+              {feature.history?.architectural_changes && (
+                <Text>
+                  <Text style={styles.historyLabel}>
+                    Architectural Changes:
+                  </Text>{' '}
+                  {feature.history.architectural_changes}
+                </Text>
+              )}
+              {feature.history?.first_construction && (
+                <Text>
+                  <Text style={styles.historyLabel}>First Construction:</Text>{' '}
+                  {feature.history.first_construction}
+                </Text>
+              )}
+              {feature.history?.architectural_style && (
+                <Text>
+                  <Text style={styles.historyLabel}>Architectural Style:</Text>{' '}
+                  {feature.history.architectural_style}
+                </Text>
+              )}
+            </View>
+
+            {/* Цікаві факти про об'єкт */}
+            {feature.interesting_facts && (
+              <View style={styles.factsContainer}>
+                <Text style={styles.factsTitle}>Interesting Facts</Text>
+                {feature.interesting_facts.map((fact, factIndex) => (
+                  <Text key={factIndex} style={styles.factItem}>
+                    - {fact}
+                  </Text>
+                ))}
+              </View>
+            )}
+
+            {/* Інформація для відвідувачів */}
+            <View style={styles.visitInfoContainer}>
+              <Text style={styles.visitInfoTitle}>Visit Information</Text>
+              <Text>
+                <Text style={styles.visitInfoLabel}>Opening Hours:</Text>{' '}
+                {feature.visit_information.opening_hours}
+              </Text>
+              <Text>
+                <Text style={styles.visitInfoLabel}>Tickets:</Text>{' '}
+                {feature.visit_information.tickets}
+              </Text>
+            </View>
+
+            {/* Фотографія об'єкта */}
+            <Image source={{uri: feature.photo}} style={styles.photo} />
+          </View>
+        ))}
+      </ScrollView>
+    );
+  };
+
   const renderEventItem = ({item: event}) => {
     switch (item.type) {
       case 'Theatre':
@@ -271,6 +350,8 @@ const EventScreen = ({route}) => {
         return renderCarnivalEvent({item: event});
       case 'Island':
         return renderIslandEvent({item: event});
+      case 'Square':
+        return renderSquareEvent({item: event});
       default:
         return null;
     }
@@ -315,7 +396,7 @@ const styles = StyleSheet.create({
   eventTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: COLOR.black,
+    color: COLOR.blue,
     marginBottom: 10,
   },
   eventDescription: {
@@ -338,7 +419,7 @@ const styles = StyleSheet.create({
   attractionText: {
     fontSize: 18,
     color: COLOR.black,
-    marginLeft: 10,
+    marginLeft: 10,color: COLOR.blue
   },
   galleryContainer: {
     marginTop: 10,
@@ -370,5 +451,62 @@ const styles = StyleSheet.create({
     padding: 5,
     borderRadius: 12,
     marginVertical: 5,
+  },
+  container: {
+    padding: 16,
+  },
+  description: {
+    fontSize: 16,
+    marginBottom: 16,
+  },
+  featureContainer: {
+    marginBottom: 24,
+  },
+  featureTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  featureDescription: {
+    fontSize: 16,
+    marginBottom: 8,
+  },
+  historyContainer: {
+    marginBottom: 16,
+  },
+  historyTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  historyLabel: {
+    fontWeight: 'bold',
+  },
+  factsContainer: {
+    marginBottom: 16,
+  },
+  factsTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  factItem: {
+    fontSize: 16,
+  },visitInfoContainer: {
+    marginBottom: 16,
+  },
+  visitInfoTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  visitInfoLabel: {
+    fontWeight: 'bold',
+  },
+  photo: {
+    width: '100%',
+    height: 200,
+    marginTop: 8,
+    borderRadius: 8,
   },
 });

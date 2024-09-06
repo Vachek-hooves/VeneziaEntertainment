@@ -412,7 +412,8 @@ export const ENTERTAINMENT = [
             photo: 'colorful_houses.jpg',
           },
         ],
-        photo: 'https://expertvagabond.com/wp-content/uploads/burano-island-town.jpg',
+        photo:
+          'https://expertvagabond.com/wp-content/uploads/burano-island-town.jpg',
         cost: '30 euro',
       },
     ],
@@ -449,7 +450,8 @@ export const ENTERTAINMENT = [
               tickets:
                 'Entrance to the main area is free. Tickets are required to access the museums, treasury, and other special areas.',
             },
-            photo: 'saint_marks_cathedral.jpg',
+            photo:
+              'https://cdn4.tuscanynowandmore.com/storage/app/uploads/public/e62/66a/aab/thumb__1920_0_0_0_auto.jpg',
           },
           {
             name: 'Campanile di San Marco',
@@ -471,7 +473,8 @@ export const ENTERTAINMENT = [
               tickets:
                 'Tickets can be purchased at the venue or online. It is recommended to book in advance, especially during the tourist season.',
             },
-            photo: 'campanile_di_san_marco.jpg',
+            photo:
+              'https://www.metropolitano.it/wp-content/uploads/2021/10/campanile-san-marco.jpeg',
           },
         ],
       },
