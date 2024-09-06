@@ -18,7 +18,57 @@ const EventScreen = ({route}) => {
   const renderGalleryItem = ({item}) => (
     <Image source={{uri: item}} style={styles.galleryImage} />
   );
-  const renderEventItem = ({item: event}) => (
+  const renderTheatreEvent = ({item: event}) => {
+    // Перетворення об'єкта key_performers в масив пар
+    const keyPerformersArray = Object.entries(event.key_performers || {}).map(
+      ([name, role]) => ({name, role}),
+    );
+
+    return (
+      <View key={event.id} style={styles.eventContainer}>
+        {event.image && (
+          <Image source={{uri: event.image}} style={styles.eventImage} />
+        )}
+        <Text style={styles.eventTitle}>{event.name}</Text>
+        <Text style={styles.eventComposer}>Composer: {event.composer}</Text>
+        <Text style={styles.eventDescription}>{event.description}</Text>
+        <Text style={styles.eventPlot}>Plot: {event.plot}</Text>
+
+        {/* Основні деталі театру */}
+        {event.details && (
+          <View style={styles.detailsContainer}>
+            <Text style={styles.sectionTitle}>Details:</Text>
+            <Text style={styles.detailText}>
+              Premiere Date: {event.details.premiere_date}
+            </Text>
+            <Text style={styles.detailText}>
+              Duration: {event.details.duration}
+            </Text>
+            <Text style={styles.detailText}>
+              Director: {event.details.director}
+            </Text>
+            <Text style={styles.detailText}>
+              Conductor: {event.details.conductor}
+            </Text>
+          </View>
+        )}
+
+        {/* Якщо є ключові виконавці */}
+        {keyPerformersArray.length > 0 && (
+          <View style={styles.performersContainer}>
+            <Text style={styles.sectionTitle}>Key Performers:</Text>
+            {keyPerformersArray.map((performer, index) => (
+              <Text key={index} style={styles.performerText}>
+                {performer.name} - {performer.role}
+              </Text>
+            ))}
+          </View>
+        )}
+      </View>
+    );
+  };
+  // Рендеринг події типу Attractions (стандартний варіант)
+  const renderAttractionEvent = ({item: event}) => (
     <View key={event.id} style={styles.eventContainer}>
       <Text style={styles.eventTitle}>{event.name}</Text>
       <Text style={styles.eventDescription}>{event.description}</Text>
@@ -31,14 +81,7 @@ const EventScreen = ({route}) => {
         keyExtractor={(attraction, index) => index.toString()}
         renderItem={({item}) => (
           <View style={styles.attractionContainer}>
-            <Text
-              style={[
-                styles.attractionText,
-                {textAlign: 'center', marginVertical: 10},
-              ]}>
-              {' '}
-              {item.name}
-            </Text>
+            <Text style={styles.attractionText}>Name: {item.name}</Text>
             <Text style={styles.attractionText}>History: {item.history}</Text>
 
             {/* Якщо interestingFacts.fact є масивом */}
@@ -51,7 +94,7 @@ const EventScreen = ({route}) => {
                   </Text>
                 ))
               ) : (
-                <Text>{item.interestingFacts.fact}</Text> // Якщо це не масив, просто рендеримо як текст
+                <Text>{item.interestingFacts.fact}</Text>
               )}
             </View>
           </View>
@@ -70,6 +113,13 @@ const EventScreen = ({route}) => {
       />
     </View>
   );
+  const renderEventItem = ({item: event}) => {
+    if (item.type === 'Theatre') {
+      return renderTheatreEvent({item: event});
+    } else {
+      return renderAttractionEvent({item: event});
+    }
+  };
   return (
     <ImageOnBg>
       <RenderMainImage image={item.coverImage} />
@@ -98,7 +148,7 @@ const styles = StyleSheet.create({
   },
   eventContainer: {
     marginBottom: 30,
-    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    backgroundColor: COLOR.white + 90,
     borderRadius: 10,
     padding: 15,
     shadowColor: '#000',
@@ -124,14 +174,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   sectionTitle: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     color: COLOR.gold,
     marginBottom: 5,
     marginTop: 10,
   },
   attractionText: {
-    fontSize: 16,
+    fontSize: 18,
     color: COLOR.black,
     marginLeft: 10,
   },
@@ -144,5 +194,16 @@ const styles = StyleSheet.create({
     resizeMode: 'cover',
     marginRight: 10,
     borderRadius: 8,
+  },
+  eventImage: {
+    width: Dimensions.get('window').width - 70, // Зменшити ширину, якщо потрібно
+    height: 150, // Зменшити висоту, якщо потрібно
+    marginBottom: 10,
+    borderRadius: 10,
+  },
+  eventPlot: {
+    fontSize: 16,
+    color: COLOR.black,
+    marginBottom: 10,
   },
 });

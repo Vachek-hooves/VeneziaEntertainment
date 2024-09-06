@@ -195,6 +195,8 @@ export const ENTERTAINMENT = [
       'https://fascination-venice.com/wp-content/uploads/2019/12/La_Fenice_Opening_Times_04.jpg',
     events: [
       {
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Teatro_La_Fenice%2C_Venice.jpg/640px-Teatro_La_Fenice%2C_Venice.jpg',
         id: 't1',
         name: 'Nabucco',
         description:
@@ -202,9 +204,9 @@ export const ENTERTAINMENT = [
         plot: "King Nebuchadnezzar II conquers Jerusalem and captures the Jews. The famous 'Va, pensiero' scene expresses the longing for homeland.",
         composer: 'Giuseppe Verdi',
         key_performers: {
-          nebucadnezzar: 'Tenor',
-          abigail: 'Soprano',
-          zechariah: 'Baritone',
+          Nebucadnezzar: 'Tenor',
+          Abigail: 'Soprano',
+          Zechariah: 'Baritone',
         },
         details: {
           premiere_date: 'February 6, 2024',
@@ -214,6 +216,8 @@ export const ENTERTAINMENT = [
         },
       },
       {
+        image:
+          'https://upload.wikimedia.org/wikipedia/commons/9/97/Locandina_Manon_Lescaut.jpg',
         id: 't2',
         name: 'Manon Lescaut',
         composer: 'Giacomo Puccini',
@@ -234,6 +238,8 @@ export const ENTERTAINMENT = [
         },
       },
       {
+        image:
+          'https://www.intrieste.com/w/wp-content/uploads/2024/05/DarjaStravsTisu_6255_Giselle-scaled.jpg',
         id: 't3',
         bname: 'Giselle',
         composer: 'Adolphe Adam',
