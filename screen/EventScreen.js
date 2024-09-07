@@ -455,6 +455,7 @@ const EventScreen = ({route}) => {
         <View style={styles.costContainer}>
           <Text>Cost: {museum.cost}</Text>
         </View>
+        <View style={{height: 100}}></View>
       </View>
     );
   };
@@ -480,12 +481,14 @@ const EventScreen = ({route}) => {
   return (
     <ImageOnBg>
       <RenderMainImage image={item.coverImage} />
+
       <FlatList
         data={item.events}
         keyExtractor={(image, index) => index.toString()}
         renderItem={renderEventItem}
         contentContainerStyle={styles.contentContainer}
       />
+      <View style={{height: 150}}></View>
     </ImageOnBg>
   );
 };
@@ -513,6 +516,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 2,
+    
   },
   eventTitle: {
     fontSize: 24,
