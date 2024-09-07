@@ -4,4 +4,6 @@ export const COLOR = {
   inActive: '#E9EFEC',
   white: '#F5F5F5',
   blue: '#071952',
+  red: '#A04747',
+  green: '#557C56',
 };
