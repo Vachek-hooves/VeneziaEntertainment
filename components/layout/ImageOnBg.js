@@ -5,7 +5,7 @@ const ImageOnBg = ({children, style}) => {
     <ImageBackground
       style={[style, {flex: 1}]}
       source={require('../../assets/img/bg/granit.png')}>
-      <SafeAreaView>{children}</SafeAreaView>
+      <SafeAreaView style={{flex:1}}>{children}</SafeAreaView>
     </ImageBackground>
   );
 };

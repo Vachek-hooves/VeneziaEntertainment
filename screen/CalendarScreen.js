@@ -2,8 +2,10 @@ import {StyleSheet, Text, View} from 'react-native';
 import {ImageOnBg} from '../components/layout';
 import {Calendar} from 'react-native-calendars';
 import {COLOR} from '../contstants/colors';
+import {useState} from 'react';
 
 const CalendarScreen = () => {
+  const [selected, setSelected] = useState('');
   return (
     <ImageOnBg>
       <Text style={styles.header}>CALENDAR</Text>
@@ -18,6 +20,14 @@ const CalendarScreen = () => {
             dayTextColor: COLOR.white,
             todayTextColor: COLOR.gold, // Підсвічує поточний день
             weekVerticalMargin: 25,
+            todayBackgroundColor: COLOR.white + 50,
+          }}
+          markedDates={{
+            [selected]: {
+              selected: true,
+              disableTouchEvent: true,
+              selectedDotColor: 'orange',
+            },
           }}
         />
       </View>

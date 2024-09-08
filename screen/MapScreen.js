@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     position: 'absolute',
-    bottom: 20,
+    bottom: 150,
     left: 10,
     flexDirection: 'column',
     gap: 20,

@@ -488,7 +488,7 @@ const EventScreen = ({route}) => {
         renderItem={renderEventItem}
         contentContainerStyle={styles.contentContainer}
       />
-      <View style={{height: 150}}></View>
+      {/* <View style={{height: 150}}></View> */}
     </ImageOnBg>
   );
 };
@@ -498,6 +498,7 @@ export default EventScreen;
 const styles = StyleSheet.create({
   contentContainer: {
     padding: 20,
+   
   },
   title: {
     fontSize: 28,
@@ -516,7 +517,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 2,
-    
   },
   eventTitle: {
     fontSize: 24,
