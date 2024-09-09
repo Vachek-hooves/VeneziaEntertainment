@@ -23,7 +23,7 @@ const WelcomeScreen = ({navigation}) => {
           <Text style={styles.text}>Venezia</Text>
         </View>
         <View style={[styles.circle3, styles.zigzag3]}>
-          <Text style={styles.text}>Entertainment</Text>
+          <Text style={styles.text}>Environment</Text>
         </View>
       </View>
     </MonaLisaBg>

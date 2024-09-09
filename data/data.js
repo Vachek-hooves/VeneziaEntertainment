@@ -274,7 +274,7 @@ export const ENTERTAINMENT = [
             name: 'Flight of the Angel',
             description:
               "A symbolic event where an 'Angel' descends from the bell tower of St. Mark's Basilica on a rope, symbolizing a heavenly blessing for the carnival.",
-            schedule: 'February 6, 11:00',
+            schedule: 'February 22 2025, 11:00',
             location: "St. Mark's Square",
             image:
               'https://img.jakpost.net/c/2019/02/25/2019_02_25_66241_1551069916._large.jpg',
@@ -283,7 +283,7 @@ export const ENTERTAINMENT = [
             name: 'Costume Balls',
             description:
               "Luxurious costume balls take place during the carnival, including a special 'Mary of the Year' Ball and the famous Venetian Masquerade Ball.",
-            schedule: 'February 8, 18:00',
+            schedule: 'February 22 2025, 18:00',
             location: "Ca' Vendramin Palace",
             image:
               'https://pointsmilesandbling.com/wp-content/uploads/2023/03/20230219_105430-scaled.jpg',
@@ -292,7 +292,7 @@ export const ENTERTAINMENT = [
             name: 'Gran Corso Mascherato',
             description:
               'The main carnival parade featuring participants in elaborate costumes, followed by a costume contest.',
-            schedule: 'February 10, 11:00',
+            schedule: 'February 23 2025, 11:00',
             location: "St. Mark's Square",
             image:
               'https://www.venice-carnival-italy.com/wp-content/uploads/2019/11/venice-carnival-2019-masks.jpg',
@@ -301,7 +301,7 @@ export const ENTERTAINMENT = [
             name: 'Grand Canal Gondola and Boat Parade',
             description:
               'A spectacular parade of gondolas and boats along the Grand Canal with participants wearing traditional Venetian masks.',
-            schedule: 'February 14, 14:00',
+            schedule: 'February 16 2025, 14:00',
             location: 'Grand Canal',
             image:
               'https://img.freepik.com/premium-photo/venice-italy-grand-canal-venice-carnival-opening-with-gondola-boat-water-parade_236845-913.jpg',
@@ -310,7 +310,7 @@ export const ENTERTAINMENT = [
             name: 'Final Grand Ball',
             description:
               "The final ball of the Venice Carnival held in the Doge's Palace, marking the end of the festivities.",
-            schedule: 'February 17, 20:00',
+            schedule: 'February 28 2025, 20:00',
             location: "Doge's Palace",
             image:
               'https://www.venice-etc.com/wp-content/uploads/2015/12/Venice-Carnival-20161.jpg',
@@ -319,7 +319,7 @@ export const ENTERTAINMENT = [
             name: 'Closing Ceremony',
             description:
               "The official closing of the Venice Carnival with a final parade and exhibition of masks in St. Mark's Square.",
-            schedule: 'February 18, 18:00',
+            schedule: 'March 4 2025, 18:00',
             location: "St. Mark's Square",
             image: 'https://media.timeout.com/images/105412070/image.jpg',
           },
@@ -767,7 +767,7 @@ export const CARNIVAL = [
         name: 'Flight of the Angel',
         description:
           "A symbolic event where an 'Angel' descends from the bell tower of St. Mark's Basilica on a rope, symbolizing a heavenly blessing for the carnival.",
-        schedule: 'February 6, 11:00',
+        schedule: 'February 23, 11:00',
         location: "St. Mark's Square",
         photo: 'flight_of_the_angel.jpg',
       },
@@ -775,7 +775,7 @@ export const CARNIVAL = [
         name: 'Costume Balls',
         description:
           "Luxurious costume balls take place during the carnival, including a special 'Mary of the Year' Ball and the famous Venetian Masquerade Ball.",
-        schedule: 'February 8, 18:00',
+        schedule: 'February 23, 18:00',
         location: "Ca' Vendramin Palace",
         photo: 'costume_ball.jpg',
       },
@@ -783,7 +783,7 @@ export const CARNIVAL = [
         name: 'Gran Corso Mascherato',
         description:
           'The main carnival parade featuring participants in elaborate costumes, followed by a costume contest.',
-        schedule: 'February 10, 11:00',
+        schedule: 'February 22, 11:00',
         location: "St. Mark's Square",
         photo: 'main_parade.jpg',
       },
@@ -791,7 +791,7 @@ export const CARNIVAL = [
         name: 'Grand Canal Gondola and Boat Parade',
         description:
           'A spectacular parade of gondolas and boats along the Grand Canal with participants wearing traditional Venetian masks.',
-        schedule: 'February 14, 14:00',
+        schedule: 'February 16, 14:00',
         location: 'Grand Canal',
         photo: 'gondola_parade.jpg',
       },
