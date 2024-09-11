@@ -39,7 +39,20 @@ const UserScreen = () => {
   };
 
   const saveUserData = async () => {
-    if (name && image) {
+    // if (name && image) {
+    //   const userProfile = {name, image};
+    //   try {
+    //     await AsyncStorage.setItem('userProfile', JSON.stringify(userProfile));
+    //     Alert.alert('Success', 'User data saved successfully');
+    //     setIsEditing(false);
+    //     setIsRegistered(true);
+    //   } catch (error) {
+    //     Alert.alert('Failed to save data', error.message);
+    //   }
+    // } else {
+    //   Alert.alert('Please enter your name and select a image');
+    // }
+    if (name) {
       const userProfile = {name, image};
       try {
         await AsyncStorage.setItem('userProfile', JSON.stringify(userProfile));
@@ -50,9 +63,10 @@ const UserScreen = () => {
         Alert.alert('Failed to save data', error.message);
       }
     } else {
-      Alert.alert('Please enter your name and select a image');
+      Alert.alert('Please enter your name');
     }
   };
+
   const handleEdit = () => {
     setIsEditing(true);
   };
@@ -89,7 +103,9 @@ const UserScreen = () => {
             <PickUserImage
               handleImage={images => setImage(images[0])}
               btnStyle={styles.imagePickerBtn}>
-              <Text style={styles.text}>Select Photo</Text>
+             <Text style={styles.text}>
+                {image ? 'Change Photo' : 'Select Photo (Optional)'}
+              </Text>
             </PickUserImage>
 
             {image && (

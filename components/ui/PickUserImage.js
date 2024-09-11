@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity} from 'react-native';
+import {Text, TouchableOpacity, Alert} from 'react-native';
 import {launchImageLibrary} from 'react-native-image-picker';
 
 const PickUserImage = ({handleImage, style, children, btnStyle}) => {
