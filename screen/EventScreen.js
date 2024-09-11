@@ -33,7 +33,10 @@ const EventScreen = ({route}) => {
         <Text style={styles.eventTitle}>{event.name}</Text>
         <Text style={styles.eventComposer}>Composer: {event.composer}</Text>
         <Text style={styles.eventDescription}>{event.description}</Text>
-        <Text style={styles.eventPlot}>Plot: {event.plot}</Text>
+        <Text style={styles.eventPlot}>
+          <Text style={{color: COLOR.black, fontWeight: '600'}}>Plot: </Text>{' '}
+          {event.plot}
+        </Text>
 
         {/* Основні деталі театру */}
         {event.details && (
@@ -81,8 +84,12 @@ const EventScreen = ({route}) => {
         keyExtractor={(attraction, index) => index.toString()}
         renderItem={({item}) => (
           <View style={styles.attractionContainer}>
-            <Text style={styles.attractionText}>Name: {item.name}</Text>
-            <Text style={styles.attractionText}>History: {item.history}</Text>
+            <Text style={styles.attractionText}>
+              <Text style={{fontWeight: '600'}}>Name:</Text> {item.name}
+            </Text>
+            <Text style={styles.attractionText}>
+              <Text style={{fontWeight: '600'}}>History: </Text> {item.history}
+            </Text>
 
             {/* Якщо interestingFacts.fact є масивом */}
             <View>
@@ -195,12 +202,17 @@ const EventScreen = ({route}) => {
           <Text style={styles.eventTitle}>{event.name}</Text>
           <Image source={{uri: event.photo}} style={styles.eventImage} />
           <Text style={styles.eventDescription}>{event.description}</Text>
-          <Text style={styles.eventHistory}>History: {event.history}</Text>
+          <Text style={styles.eventHistory}>
+            <Text style={{fontSize: 16, fontWeight: '600'}}>History:</Text>{' '}
+            {event.history}
+          </Text>
 
           {/* Рендеринг цікавих фактів */}
           <Text style={styles.sectionTitle}>Interesting Facts:</Text>
           {event.interesting_facts.map((fact, factIndex) => (
-            <Text key={factIndex} style={styles.interestingFact}>
+            <Text
+              key={factIndex}
+              style={[styles.interestingFact, {fontSize: 16, marginTop: 8}]}>
               - {fact}
             </Text>
           ))}
@@ -209,8 +221,16 @@ const EventScreen = ({route}) => {
           <Text style={styles.sectionTitle}>Places to Visit:</Text>
           {event.places.map((place, placeIndex) => (
             <View key={placeIndex} style={styles.placeContainer}>
-              <Text style={styles.placeName}>{place.name}</Text>
-              <Text style={styles.placeDescription}>{place.description}</Text>
+              <Text
+                style={[
+                  styles.placeName,
+                  {fontSize: 16, fontWeight: 'bold', marginVertical: 5},
+                ]}>
+                {place.name}
+              </Text>
+              <Text style={[styles.placeDescription, {fontSize: 17}]}>
+                {place.description}
+              </Text>
               {place.photo && (
                 <Image source={{uri: place.photo}} style={styles.placeImage} />
               )}
@@ -265,7 +285,7 @@ const EventScreen = ({route}) => {
     return (
       <ScrollView style={styles.eventContainer}>
         {/* Назва площі */}
-        <Text style={styles.title}>{event.title}</Text>
+        <Text style={[styles.title, {color: COLOR.blue}]}>{event.title}</Text>
         {/* Опис площі */}
         <Text style={styles.description}>{event.description}</Text>
 
@@ -281,9 +301,11 @@ const EventScreen = ({route}) => {
             <View style={styles.historyContainer}>
               <Text style={styles.historyTitle}>History</Text>
               {feature.history?.origin && (
-                <Text>
+                <Text style={{marginVertical: 8}}>
                   <Text style={styles.historyLabel}>Origin:</Text>{' '}
-                  {feature.history.origin}
+                  <Text style={{fontSize: 16, textAlign: 'center'}}>
+                    {feature.history.origin}
+                  </Text>
                 </Text>
               )}
               {feature.history?.architectural_changes && (
@@ -291,7 +313,9 @@ const EventScreen = ({route}) => {
                   <Text style={styles.historyLabel}>
                     Architectural Changes:
                   </Text>{' '}
-                  {feature.history.architectural_changes}
+                  <Text style={{fontSize: 16, textAlign: 'center'}}>
+                    {feature.history.architectural_changes}
+                  </Text>
                 </Text>
               )}
               {feature.history?.first_construction && (
@@ -311,9 +335,13 @@ const EventScreen = ({route}) => {
             {/* Цікаві факти про об'єкт */}
             {feature.interesting_facts && (
               <View style={styles.factsContainer}>
-                <Text style={styles.factsTitle}>Interesting Facts</Text>
+                <Text style={[styles.factsTitle, {marginVertical: 8}]}>
+                  Interesting Facts
+                </Text>
                 {feature.interesting_facts.map((fact, factIndex) => (
-                  <Text key={factIndex} style={styles.factItem}>
+                  <Text
+                    key={factIndex}
+                    style={[styles.factItem, {marginVertical: 8}]}>
                     - {fact}
                   </Text>
                 ))}
@@ -321,13 +349,13 @@ const EventScreen = ({route}) => {
             )}
 
             {/* Інформація для відвідувачів */}
-            <View style={styles.visitInfoContainer}>
+            <View style={[styles.visitInfoContainer, {marginVertical: 8}]}>
               <Text style={styles.visitInfoTitle}>Visit Information</Text>
-              <Text>
-                <Text style={styles.visitInfoLabel}>Opening Hours:</Text>{' '}
+              <Text style={{marginVertical: 8, fontSize: 16}}>
+                <Text style={[styles.visitInfoLabel]}>Opening Hours:</Text>{' '}
                 {feature.visit_information.opening_hours}
               </Text>
-              <Text>
+              <Text style={{marginVertical: 8, fontSize: 16}}>
                 <Text style={styles.visitInfoLabel}>Tickets:</Text>{' '}
                 {feature.visit_information.tickets}
               </Text>
@@ -342,67 +370,7 @@ const EventScreen = ({route}) => {
   };
 
   const renderMuseumEvent = ({item: museum}) => {
-    console.log(museum);
     return (
-      //   <View style={styles.museumContainer}>
-      //     {/* Картинка музею */}
-      //     <Image source={{ uri: museum.coverImage }} style={styles.coverImage} />
-
-      //     {/* Рендеринг подій музею */}
-      //     {museum.events.map((event, index) => (
-      //       <View key={index} style={styles.eventContainer}>
-      //         {/* Назва події */}
-      //         <Text style={styles.eventTitle}>{event.name}</Text>
-
-      //         {/* Опис події */}
-      //         <Text style={styles.eventDescription}>{event.description}</Text>
-
-      //         {/* Історія події */}
-      //         <View style={styles.historyContainer}>
-      //           <Text style={styles.historyTitle}>History</Text>
-      //           {event.history?.origin && (
-      //             <Text>
-      //               <Text style={styles.historyLabel}>Origin:</Text> {event.history.origin}
-      //             </Text>
-      //           )}
-      //           {event.history?.development && (
-      //             <Text>
-      //               <Text style={styles.historyLabel}>Development:</Text> {event.history.development}
-      //             </Text>
-      //           )}
-      //           {event.history?.reconstructions && (
-      //             <Text>
-      //               <Text style={styles.historyLabel}>Reconstructions:</Text> {event.history.reconstructions}
-      //             </Text>
-      //           )}
-      //         </View>
-
-      //         {/* Цікаві факти */}
-      //         {event.interesting_facts && (
-      //           <View style={styles.factsContainer}>
-      //             <Text style={styles.factsTitle}>Interesting Facts</Text>
-      //             {event.interesting_facts.map((fact, factIndex) => (
-      //               <Text key={factIndex} style={styles.factItem}>
-      //                 - {fact}
-      //               </Text>
-      //             ))}
-      //           </View>
-      //         )}
-
-      //         {/* Інформація про години роботи */}
-      //         <Text style={styles.hoursTitle}>Opening Hours</Text>
-      //         <Text>{event.hours_of_operation || event.opening_hours}</Text>
-
-      //         {/* Вартість входу */}
-      //         <Text style={styles.costTitle}>Cost</Text>
-      //         <Text>{event.cost}</Text>
-
-      //         {/* Фото події */}
-      //         <Image source={{ uri: event.photo }} style={styles.photo} />
-      //       </View>
-      //     ))}
-      //   </View>
-
       <View style={styles.eventContainer}>
         <Text style={styles.eventTitle}>{museum.name}</Text>
         {museum.photo && (
@@ -413,13 +381,13 @@ const EventScreen = ({route}) => {
           <Text style={styles.historyTitle}>History</Text>
           <Text>
             <Text style={styles.historyLabel}>Origin:</Text>{' '}
-            {museum.history.origin}
+            <Text style={{fontSize: 16}}>{museum.history.origin}</Text>
           </Text>
           {museum.history.development && (
             <View style={{marginVertical: 10}}>
               <Text>
                 <Text style={styles.historyLabel}>Development:</Text>{' '}
-                {museum.history.development}
+                <Text style={{fontSize: 16}}>{museum.history.development}</Text>
               </Text>
             </View>
           )}
@@ -427,7 +395,9 @@ const EventScreen = ({route}) => {
             <View style={{marginVertical: 10}}>
               <Text>
                 <Text style={styles.historyLabel}>Reconstructions:</Text>{' '}
-                {museum.history.reconstructions}
+                <Text style={{fontSize: 16}}>
+                  {museum.history.reconstructions}
+                </Text>
               </Text>
             </View>
           )}
@@ -435,23 +405,27 @@ const EventScreen = ({route}) => {
             <View style={{marginVertical: 10}}>
               <Text>
                 <Text style={styles.historyLabel}>Collection:</Text>{' '}
-                {museum.history.collection}
+                <Text style={{fontSize: 16}}>{museum.history.collection}</Text>
               </Text>
             </View>
           )}
         </View>
         {museum.interesting_facts && museum.interesting_facts.length > 0 && (
-          <View style={styles.factsContainer}>
-            <Text style={styles.factsTitle}>Interesting Facts</Text>
+          <View style={[styles.factsContainer,]}>
+            <Text style={[styles.factsTitle,]}>Interesting Facts</Text>
             {museum.interesting_facts.map((fact, factIndex) => (
-              <Text key={factIndex} style={styles.factItem}>
+              <Text key={factIndex} style={[styles.factItem,{marginVertical:8}]}>
                 - {fact}
               </Text>
             ))}
           </View>
         )}
-        <Text style={styles.hoursTitle}>Opening Hours</Text>
-        <Text>{museum.hours_of_operation || museum.opening_hours}</Text>
+        <Text style={[styles.hoursTitle, {fontSize: 16, fontWeight: 'bold'}]}>
+          Opening Hours
+        </Text>
+        <Text style={{fontSize: 16}}>
+          {museum.hours_of_operation || museum.opening_hours}
+        </Text>
         <View style={styles.costContainer}>
           <Text>Cost: {museum.cost}</Text>
         </View>
@@ -498,7 +472,6 @@ export default EventScreen;
 const styles = StyleSheet.create({
   contentContainer: {
     padding: 20,
-   
   },
   title: {
     fontSize: 28,
@@ -509,7 +482,7 @@ const styles = StyleSheet.create({
   },
   eventContainer: {
     marginBottom: 30,
-    backgroundColor: COLOR.white + 90,
+    backgroundColor: COLOR.grey,
     borderRadius: 10,
     padding: 15,
     shadowColor: '#000',
@@ -525,9 +498,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   eventDescription: {
-    fontSize: 16,
+    fontSize: 18,
     color: COLOR.black,
     marginBottom: 10,
+    lineHeight: 24,
   },
   eventDuration: {
     fontSize: 16,
@@ -537,15 +511,17 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: COLOR.gold,
+    color: COLOR.purple,
     marginBottom: 5,
     marginTop: 10,
+    textAlign: 'center',
   },
   attractionText: {
     fontSize: 18,
     color: COLOR.black,
     marginLeft: 10,
-    color: COLOR.blue,
+    lineHeight: 24,
+    marginTop: 10,
   },
   galleryContainer: {
     marginTop: 10,
@@ -582,8 +558,9 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   description: {
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 16,
+    textAlign: 'center',
   },
   featureContainer: {
     marginBottom: 24,
@@ -607,6 +584,7 @@ const styles = StyleSheet.create({
   },
   historyLabel: {
     fontWeight: 'bold',
+    fontSize: 16,
   },
   factsContainer: {
     marginBottom: 16,
@@ -636,4 +614,10 @@ const styles = StyleSheet.create({
     marginTop: 8,
     borderRadius: 8,
   },
+  detailText: {
+    fontWeight: '500',
+    fontSize: 16,
+  },
+  performerText: {fontWeight: '500', fontSize: 16},
+  eventHistory: {fontSize: 16, lineHeight: 20},
 });
