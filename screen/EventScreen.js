@@ -13,7 +13,7 @@ import {COLOR} from '../contstants/colors';
 
 const EventScreen = ({route}) => {
   const {item} = route.params;
-  //   console.log('ITEM', item);
+
 
   const renderGalleryItem = ({item}) => (
     <Image source={{uri: item}} style={styles.galleryImage} />
@@ -190,7 +190,7 @@ const EventScreen = ({route}) => {
   );
 
   const renderIslandEvent = ({item: event}) => (
-    // console.log(item),
+  
     <View style={styles.islandContainer}>
       <Text style={styles.islandTitle}>
         {item.type}: {item.events.name}

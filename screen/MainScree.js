@@ -29,8 +29,6 @@ export default MainScreen;
 
 const Card = ({item, navigation}) => {
   function eventCall() {
-    // console.log(item.id, item.type);
-    // console.log(item);
     navigation.navigate('EventScreen', {
       item,
     });
