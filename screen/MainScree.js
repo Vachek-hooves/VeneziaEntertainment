@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     overflow: 'hidden',
     backgroundColor: 'transparent',
-    elevation: 2, // Тінь для Android
-    shadowColor: COLOR.white, // Тінь для iOS
+    elevation: 2, 
+    shadowColor: COLOR.white, 
     shadowOffset: {width: 0, height: 6},
     shadowOpacity: 0.1,
     shadowRadius: 4,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   image: {
-    width: Dimensions.get('window').width / 2 - 20, // Ширина картки
+    width: Dimensions.get('window').width / 2 - 20, 
     height: 180,
     resizeMode: 'cover',
     padding: 5,

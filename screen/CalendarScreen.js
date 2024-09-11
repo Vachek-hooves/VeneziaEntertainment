@@ -16,9 +16,9 @@ const CalendarScreen = () => {
             ...styles.calendarTheme,
             textMonthFontSize: 22,
             monthTextColor: COLOR.gold,
-            textDayFontSize: 20, // Шрифт для днів
+            textDayFontSize: 20, 
             dayTextColor: COLOR.white,
-            todayTextColor: COLOR.gold, // Підсвічує поточний день
+            todayTextColor: COLOR.gold, 
             weekVerticalMargin: 25,
             todayBackgroundColor: COLOR.white + 50,
           }}
@@ -41,23 +41,22 @@ const styles = StyleSheet.create({
   calendarContainer: {
     marginTop: 100,
     padding: 10,
-    // alignItems: 'center',
     justifyContent: 'center',
   },
   calendarStyle: {
     borderRadius: 20,
     paddingBottom: 10,
-    height: 500, // Фіксована висота для календаря
+    height: 500, 
     width: '100%',
   },
   calendarTheme: {
     calendarBackground: COLOR.black + 90,
-    arrowColor: COLOR.gold, // Стрілки змінюють місяць
-    todayTextColor: COLOR.gold, // Підсвічує сьогоднішню дату
-    textSectionTitleColor: COLOR.white, // Колір днів тижня
-    selectedDayBackgroundColor: COLOR.blue, // Підсвічення вибраного дня
+    arrowColor: COLOR.gold, 
+    todayTextColor: COLOR.gold, 
+    textSectionTitleColor: COLOR.white, 
+    selectedDayBackgroundColor: COLOR.blue, 
     textDayFontWeight: '300',
-    textMonthFontWeight: 'bold', // Товстий шрифт для місяця
+    textMonthFontWeight: 'bold', 
   },
   header: {
     fontWeight: '800',

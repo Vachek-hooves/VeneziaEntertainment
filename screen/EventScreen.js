@@ -20,7 +20,7 @@ const EventScreen = ({route}) => {
   );
 
   const renderTheatreEvent = ({item: event}) => {
-    // Перетворення об'єкта key_performers в масив пар
+    
     const keyPerformersArray = Object.entries(event.key_performers || {}).map(
       ([name, role]) => ({name, role}),
     );
