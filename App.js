@@ -9,13 +9,19 @@ import {
   UserScreen,
   WelcomeScreen,
 } from './screen';
-import {StyleSheet} from 'react-native';
+import {useEffect, useRef, useState} from 'react';
+import {StyleSheet, Animated, View} from 'react-native';
 import {COLOR} from './contstants/colors';
 import IconMap from './components/Icon/IconMap';
 import {IconCalendar, IconMain, IconMask} from './components/Icon';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+
+const images = [
+  require('./assets/img/updates/Loader1.png'),
+  require('./assets/img/updates/Loader.png'),
+];
 
 const TabNavigationMenu = () => {
   return (
@@ -55,6 +61,37 @@ const TabNavigationMenu = () => {
 };
 
 function App() {
+  const [id, setItem] = useState(0);
+  const animation = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    fadeStart();
+    const timeOut = setTimeout(() => {
+      navigateToMenu();
+    }, 6000);
+    return () => clearTimeout(timeOut);
+  }, []);
+  const fadeStart = () => {
+    Animated.timing(animation, {
+      toValue: 1,
+      duration: 1500,
+      useNativeDriver: true,
+    }).start(() => fadeFinish());
+  };
+
+  const fadeFinish = () => {
+    Animated.timing(animation, {
+      toValue: 0,
+      duration: 1500,
+      useNativeDriver: true,
+    }).start(() => {
+      setItem(prevState => prevState + 1);
+      fadeStart();
+    });
+  };
+  const navigateToMenu = () => {
+    setItem(2);
+  };
   return (
     <NavigationContainer>
       <Stack.Navigator
@@ -63,8 +100,24 @@ function App() {
           animation: 'fade_from_bottom',
           animationDuration: 1000,
         }}>
-        <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-        <Stack.Screen name="TabNavigationMenu" component={TabNavigationMenu} />
+        {id < 2 ? (
+          <Stack.Screen name="Welcome" options={{headerShown: false}}>
+            {() => (
+              <View style={{flex: 1}}>
+                <Animated.Image
+                  source={images[id]}
+                  style={[
+                    {width: '100%', flex: 1},
+                    {opacity: animation},
+                  ]}></Animated.Image>
+              </View>
+            )}
+          </Stack.Screen>
+        ) : (
+          <Stack.Screen name="TabNavigationMenu" component={TabNavigationMenu} />
+        )}
+        {/* <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} /> */}
+        {/* <Stack.Screen name="TabNavigationMenu" component={TabNavigationMenu} /> */}
         <Stack.Screen name="EventScreen" component={EventScreen} />
       </Stack.Navigator>
     </NavigationContainer>
